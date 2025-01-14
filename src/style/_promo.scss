@@ -1,0 +1,45 @@
+@use 'var';
+
+.promo {
+   padding-top: var.$promo-top-padding;
+   height: 100svh;
+   background: url('img/promo/Background.png') center/cover no-repeat;
+
+   &__header {
+      width: 532px;
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 47px;
+   }
+
+   &__social {
+      position: absolute;
+      padding-top: calc(226px - var.$promo-top-padding);
+      padding-left: 50px;
+   }
+
+   &__social-icons {
+      display: flex;
+      flex-direction: column;
+      gap: var.$min-margin;
+      cursor: pointer;
+      margin-bottom: calc(-1 * var.$promo-social-separator-padding + var.$min-margin);
+   }
+
+   &__signature {   
+      writing-mode: vertical-rl;
+      transform: rotate(-180deg);
+   }
+
+   &__signature::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 1px;
+      height: var.$promo-social-separator-width;
+      background-color: #000;
+      right: 50%;
+      bottom: var.$promo-social-separator-padding;
+      transform: translate(-50%, 0);
+   }
+}

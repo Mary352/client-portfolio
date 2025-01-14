@@ -1,0 +1,104 @@
+@use 'var';
+
+.header {
+&::after {
+   content: '';
+      display: block;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: rgba($color: #fff, $alpha: 0.75);
+      opacity: 0;
+      visibility: hidden;
+}
+
+   &:has(&__checkbox:checked)::after {
+      z-index: 2;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.5s;
+   }
+
+   &__menu-close {
+      margin: 25px 25px 87px auto;
+      width: max-content;
+   }
+
+   &__menu-close-label {
+      user-select: none;
+      cursor: pointer;
+   }
+
+   &__menu-item {
+      margin-bottom: 15px;
+   }
+
+   &__menu-link {
+      color: var.$white;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 24px;      
+   }
+   
+   &__hamburger-wrapper {
+      position: absolute;
+      top: 20px;
+      right: 30px;      
+   }
+
+   &__checkbox {
+      display: none;
+   }
+   
+   &__hamburger {
+      user-select: none;
+      cursor: pointer;
+   }
+
+   &__checkbox:not(:checked) ~ &__nav {
+      display: none;
+   }
+   
+   &__checkbox:checked ~ &__nav {
+      display: flex;
+      flex-direction: column;      
+      background-color: var.$orange;
+      height: 100svh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 3;
+   }
+
+   &__social{
+      margin: auto;
+      margin-bottom: 50px;
+   }
+
+   &__icons-list {
+      display: flex;
+      gap: var.$min-margin;
+   }
+
+   &__menu-item {
+      position: relative;
+   }
+
+   &__menu-link::before {
+      content: '';
+      position: absolute;
+      display: block;
+      border: 1px solid #000;
+      border-radius: 50%;
+      width: var.$min-margin;
+      height: var.$min-margin;
+      top: 50%;
+      left: calc(-1 * (var.$min-margin + 20px));
+      transform: translate(0, -50%);
+   }
+
+   &__menu {
+      padding-left: 75px;
+      padding-right: 136px;
+   }
+}

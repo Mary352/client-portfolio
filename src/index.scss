@@ -1,0 +1,55 @@
+@use 'style/promo';
+@use 'style/header';
+@use 'style/var';
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   text-decoration: none;
+   color: #000;
+}
+
+ul,
+ol {
+   list-style: none;
+}
+
+.container {   
+      max-width: calc(var.$container-width + var.$min-margin*2);
+      margin: 0 auto;
+      padding: 0 15px;
+}
+
+.title {
+   font-size: 16px;
+   font-weight: bold;
+   position: relative;
+   padding-left: 10px;
+   margin-bottom: 35px;
+   z-index: 1;
+}
+
+.title::before {
+   content: '';
+   display: block;
+   z-index: -1;
+   left: 0;
+   top: 50%;
+   position: absolute;
+   width: 36px;
+   height: 36px;
+   border-radius: 50%;
+   background-color: var.$orange;
+   transform: translate(0, -50%);
+}
+
+.button {
+   font-size: 14px;
+   font-weight: bold;
+   padding: 12px 25px;
+
+   &_orange {
+      background-color: var.$orange;
+   }
+}
