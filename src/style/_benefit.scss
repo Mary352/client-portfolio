@@ -1,0 +1,66 @@
+@use 'var';
+@use "sass:math";
+
+$list-padding-top: 45px;
+$big-circle-width: 36px;
+
+.benefit {
+   padding-top: 120px;
+   padding-bottom: 120px;
+
+   &__resume-list {
+      margin: 0 auto;
+      width: max-content;
+      display: flex;
+      gap: 136px;
+   }
+
+   &__group-title {
+      padding-left: 42px;
+   }
+
+   &__list {
+      padding-top: $list-padding-top;
+      position: relative;
+      border-left: 1px solid var.$black;
+   }
+
+   &__list::before {
+      @include var.pseudo-element-template($left-temp: 0, $width-temp: 15px, $height-temp: 15px, $transform-temp: translate(-50%, calc(-100% - $list-padding-top)));
+      border-radius: 50%;
+   }
+
+   &__list-item {
+      padding-left: 42px;
+      max-width: 417px;
+      margin-bottom: 45px;
+   }
+
+   &__item-main-wrapper {
+      display: flex;
+      margin-bottom: 12px;
+   }
+
+   &__icon-wrapper {
+      width: $big-circle-width;
+      height: $big-circle-width;
+      background-color: var.$orange;
+      border-radius: 50%;
+      display: flex;
+      justify-content: end;
+      align-items: end;
+      margin-right: 20px;
+
+      position: relative;
+   }
+
+   &__icon-wrapper::before {
+      top: 0;
+      @include var.pseudo-element-template($left-temp: -42px, $width-temp: 42px, $height-temp: 1px, $transform-temp: translateY(calc($big-circle-width / 2)));
+      background-color: var.$black;
+   }
+
+   &__icon-wrapper svg {
+      transform: translate(5px, 3px);
+   }
+}

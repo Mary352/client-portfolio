@@ -1,13 +1,14 @@
+@use 'style/var';
 @use 'style/promo';
 @use 'style/header';
-@use 'style/var';
+@use 'style/benefit';
 
 * {
    box-sizing: border-box;
    margin: 0;
    padding: 0;
    text-decoration: none;
-   color: #000;
+   color: var.$black;
 }
 
 ul,
@@ -18,38 +19,75 @@ ol {
 .container {   
       max-width: calc(var.$container-width + var.$min-margin*2);
       margin: 0 auto;
-      padding: 0 15px;
 }
 
-.title {
-   font-size: 16px;
-   font-weight: bold;
+.title_left-side {
+   // font-size: 16px;
+   // font-weight: bold;
+   // position: relative;
+   // padding-left: 10px;
+   // margin-bottom: 35px;
+   // z-index: 1;
+   @include var.title
+}
+
+.title_left-side::before {
+   @include var.orange-circle
+}
+
+.title_centered {
+   @include var.title($padding-left: 0, $margin: 0 auto, $width: max-content)
+}
+
+.title_centered::before {
+   @include var.orange-circle($left: 50%, $transform: translate(-50%, -50%))
+}
+
+.definition_centered {
+   margin: 0 auto 85px;
+   width: max-content;
    position: relative;
-   padding-left: 10px;
-   margin-bottom: 35px;
-   z-index: 1;
+   font-size: 36px;
+   font-weight: bold;
 }
 
-.title::before {
-   content: '';
-   display: block;
-   z-index: -1;
-   left: 0;
-   top: 50%;
-   position: absolute;
-   width: 36px;
-   height: 36px;
-   border-radius: 50%;
-   background-color: var.$orange;
-   transform: translate(0, -50%);
+.definition_centered::before {
+   @include var.orange-separator;
+
+   // content: '';
+   // display: block;
+   // position: absolute;
+   // top: 0;
+   // left: 0;
+   // border: 3px solid var.$orange;
+
+   // content: '';
+   // position: absolute;
+   // display: block;
+   // width: 60px;
+   // height: 3px;
+   // background-color: var.$orange;
+   // bottom: -25px;
+   // left: 50%;
+   // transform: translate(-50%, 0);
 }
 
 .button {
    font-size: 14px;
    font-weight: bold;
    padding: 12px 25px;
-
+   
    &_orange {
       background-color: var.$orange;
    }
+}
+
+.regular-text {
+   font-size: 12px;
+   font-weight: medium;
+}
+
+.bold-text {
+   font-size: 14px;
+   font-weight: bold;
 }

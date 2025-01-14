@@ -9,7 +9,7 @@
       width: 532px;
       font-size: 48px;
       font-weight: bold;
-      margin-bottom: 47px;
+      margin-bottom: 25px;
    }
 
    &__social {
@@ -26,6 +26,10 @@
       margin-bottom: calc(-1 * var.$promo-social-separator-padding + var.$min-margin);
    }
 
+   &__main {
+      padding: 0 15px;
+   }
+
    &__signature {   
       writing-mode: vertical-rl;
       transform: rotate(-180deg);
@@ -37,7 +41,7 @@
       display: block;
       width: 1px;
       height: var.$promo-social-separator-width;
-      background-color: #000;
+      background-color: var.$black;
       right: 50%;
       bottom: var.$promo-social-separator-padding;
       transform: translate(-50%, 0);

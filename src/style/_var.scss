@@ -2,6 +2,41 @@ $container-width: 1140px;
 $min-margin: 15px;
 $orange: #FFA501;
 $white: #fff;
+$black: #000;
 $promo-top-padding: 206px;
 $promo-social-separator-width: 70px;
 $promo-social-separator-padding: calc(-1 * ($promo-social-separator-width + $min-margin));
+
+@mixin pseudo-element-template($left-temp: 0, $width-temp: 36px, $height-temp:36px, $transform-temp: translate(0, -50%)) {
+   content: '';
+   display: block;
+   position: absolute;
+   left: $left-temp;
+   transform: $transform-temp;
+   width: $width-temp;
+   height: $height-temp;
+   background-color: $orange;
+}
+
+@mixin orange-circle($left: 0, $width: 36px, $height:36px, $transform: translate(0, -50%)) {
+   @include pseudo-element-template($left-temp: $left, $width-temp: $width, $height-temp:$height, $transform-temp:$transform);
+   z-index: -1;
+   top: 50%;
+   border-radius: 50%;
+}
+
+@mixin orange-separator($left: 50%, $width: 60px, $height:3px, $transform: translate(-50%, 0)){
+   @include pseudo-element-template($left-temp: $left, $width-temp: $width, $height-temp:$height, $transform-temp:$transform);   
+   bottom: -25px;
+}
+
+@mixin title($padding-left: 10px, $margin: 0, $width: 100%) {
+   font-size: 16px;
+   font-weight: bold;
+   position: relative;
+   padding-left: $padding-left;
+   margin: $margin;
+   margin-bottom: 10px;
+   z-index: 1;
+   width: $width;
+}
