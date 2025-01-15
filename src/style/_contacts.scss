@@ -67,11 +67,12 @@ $label-padding: 8px;
       gap: 25px;
    }
 
-   &__form > &__input-wrapper {
-      margin: 30px 0 40px;
+   &__form > &__input-error-wrapper > &__input-wrapper {
+      // margin: 30px 0 0;
+      margin-top: 30px;
    }
 
-   &__form > &__input-wrapper &__input {
+   &__form > &__input-error-wrapper > &__input-wrapper > &__input {
       height: 190px;
       resize: none;
    }
@@ -91,5 +92,12 @@ $label-padding: 8px;
 
    &__submit-btn {
       border: none;
+      margin-top: 40px;
+   }
+
+   &__input-error-text {
+      color: #ff0000;
+      display: none;
+      // margin-top: 3px;
    }
 }

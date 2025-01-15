@@ -306,19 +306,30 @@
             <p class="contacts__text bold-text">Или оставьте ваши данные и я сама вам напишу:</p>
             <form class="contacts__form">
                <div class="contacts__group-inputs">
-                  <div class="contacts__input-wrapper">
-                     <label for="username" class="contacts__label">Ваше имя</label>
-                     <input type="text" name="username" id="username" class="contacts__input">
+                  <div class="contacts__input-error-wrapper">
+                     <div class="contacts__input-wrapper">
+                        <label for="username" class="contacts__label">Ваше имя</label>
+                        <input type="text" name="username" id="username" class="contacts__input">
+                     </div>
+                     <p class="contacts__input-error-text" id="contacts__input-error-name">Some error</p>
                   </div>
-                  <div class="contacts__input-wrapper">
-                     <label for="email" class="contacts__label">Ваша почта</label>
-                     <input type="email" name="email" id="email" class="contacts__input">
+                  <div class="contacts__input-error-wrapper">
+                     <div class="contacts__input-wrapper">
+                        <label for="email" class="contacts__label">Ваша почта</label>
+                        <input type="email" name="email" id="email" class="contacts__input">
+                     </div>
+                     <p class="contacts__input-error-text" id="contacts__input-error-email">Some error</p>
                   </div>
                </div>
-               <div class="contacts__input-wrapper">
-                  <label for="text" class="contacts__label">Ваше сообщение</label>
-                  <textarea name="text" id="text" class="contacts__input"></textarea>
+
+               <div class="contacts__input-error-wrapper">
+                  <div class="contacts__input-wrapper">
+                     <label for="text" class="contacts__label">Ваше сообщение</label>
+                     <textarea name="text" id="text" class="contacts__input"></textarea>
+                  </div>
+                  <p class="contacts__input-error-text" id="contacts__input-error-textarea">Some error</p>
                </div>
+
 
                <button type="submit" class="contacts__submit-btn button_orange" id="contacts__submit-btn">Отправить
                   сообщение</button>
