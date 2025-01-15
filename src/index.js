@@ -10,9 +10,11 @@ const contactsSubmitBtn = document.getElementById('contacts__submit-btn');
 const errorName = document.getElementById('contacts__input-error-name');
 const errorEmail = document.getElementById('contacts__input-error-email');
 const errorTextarea = document.getElementById('contacts__input-error-textarea');
+const errorCheckbox = document.getElementById('contacts__input-error-checkbox');
 const nameInput = document.getElementById('username');
 const emailInput = document.getElementById('email');
 const textInput = document.getElementById('text');
+const policyCheckbox = document.getElementById('contacts__checkbox');
 const contactsForm = document.getElementById('contacts__form');
 
 function showError(block, errorText) {
@@ -54,6 +56,7 @@ contactsSubmitBtn.addEventListener('click', (e) => {
    const name = nameInput.value;
    const email = emailInput.value;
    const text = textInput.value;
+   const policy = policyCheckbox.checked;
 
    if (!name) {
       showError(errorName, 'Введите ваше имя');
@@ -70,6 +73,14 @@ contactsSubmitBtn.addEventListener('click', (e) => {
       return;
    }
 
+   // policy is used for mobile only
+   const policyBlock = document.getElementById('contacts__policy');
+   const policyBlockStyleDisplay = document.defaultView.getComputedStyle(policyBlock, null).display
+   if (!policy && policyBlock && policyBlockStyleDisplay !== 'none') {
+      showError(errorCheckbox, 'Необходимо ваше согласие');
+      return;
+   }
+
    const body = { name, email, body: text }
    sendForm(body);
 })
@@ -77,6 +88,7 @@ contactsSubmitBtn.addEventListener('click', (e) => {
 addFocusListener(nameInput, errorName);
 addFocusListener(emailInput, errorEmail);
 addFocusListener(textInput, errorTextarea);
+addFocusListener(policyCheckbox, errorCheckbox);
 
 // --------------Fibonacci Task-----------------------
 console.log('nthFibo(-25): ', nthFibo(-25))

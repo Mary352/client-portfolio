@@ -115,7 +115,7 @@ $label-padding: 8px;
       @media (max-width: var.$breakpoint_mobile){
          display: flex;
          gap: 10px;
-         margin: 20px auto;
+         margin: 20px auto 0;
          justify-content: center;
       }      
    }
@@ -134,12 +134,19 @@ $label-padding: 8px;
 
       @media (max-width: var.$breakpoint_mobile){
          display: block;
-         margin: 0 auto;
+         margin: 20px auto 0;
+         // margin-top: 20px;
       }
    }
 
    &__input-error-text {
       color: #ff0000;
       display: none;
+      font-size: 14px;
+      font-weight: 500;
+   }
+
+   &__policy ~ &__input-error-text {
+      text-align: center;
    }
 }
