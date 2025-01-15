@@ -4,18 +4,32 @@
    padding-top: var.$promo-top-padding;
    height: 100svh;
    background: url('img/promo/Background.png') center/cover no-repeat;
+   
+   @media (max-width: var.$breakpoint_mobile){
+      padding: var.$promo-top-padding 10px 0;
+      background: url('img/promo/Background-mobile.png') center/cover no-repeat;
+      // background-position: 50% 100%;
+   }
 
    &__header {
-      width: 532px;
+      max-width: 532px;
       font-size: 48px;
       font-weight: bold;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
+
+      @media (max-width: var.$breakpoint_mobile){
+         font-size: 26px;
+      }
    }
 
    &__social {
       position: absolute;
       padding-top: calc(226px - var.$promo-top-padding);
       padding-left: 50px;
+
+      @media (max-width: var.$breakpoint_mobile){
+         display: none;
+      }
    }
 
    &__social-icons {
@@ -41,5 +55,9 @@
       right: 50%;
       bottom: var.$promo-social-separator-padding;
       transform: translate(-50%, 0);
+   }
+
+   &__button:last-child {
+      margin-left: 44px;
    }
 }

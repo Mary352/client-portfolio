@@ -13,7 +13,6 @@ $promo-social-separator-padding: calc(-1 * ($promo-social-separator-width + $min
 %button-shared {
    font-size: 14px;
    font-weight: bold;
-   padding: 12px 25px;
    cursor: pointer;
 }
 
@@ -51,9 +50,13 @@ $promo-social-separator-padding: calc(-1 * ($promo-social-separator-width + $min
    position: relative;
    padding-left: $padding-left;
    margin: $margin;
-   margin-bottom: 25px;
+   margin-bottom: 15px;
    z-index: 1;
    width: $width;
+
+   @media (max-width: $breakpoint_mobile){
+      margin-bottom: 10px;
+   }
 }
 
 @mixin definition($margin: 0 auto 85px) {

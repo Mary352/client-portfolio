@@ -74,6 +74,7 @@ ol {
    
    &_orange {
       @extend %button-shared;
+      padding: 12px 25px;
       background-color: var.$orange;
    }
 }
