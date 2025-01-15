@@ -6,9 +6,17 @@ $label-padding: 8px;
    padding: 120px 35px 90px 52px;   
    display: flex;
    gap: 68px;
+   
+   @media (max-width: var.$breakpoint_mobile){
+      padding: 40px 10px 50px;
+   }
 
    &__photo-wrapper {
       max-width: 400px;
+      
+      @media (max-width: var.$breakpoint_mobile){
+         display: none;
+      }
    }
 
    &__photo {
@@ -23,7 +31,7 @@ $label-padding: 8px;
       background-color: var.$orange;
       border-radius: 50%;
       position: relative;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
    }
 
    &__title {
@@ -43,8 +51,19 @@ $label-padding: 8px;
       margin-left: 25px;
    }
 
-   &__text {
-      margin-bottom: 30px;
+   &__form {
+      margin-top: 30px;
+   }
+
+   &__group-inputs{
+      display: flex;
+      gap: 25px;
+
+      @media (max-width: var.$breakpoint_mobile){
+         flex-direction: column;
+         gap: 30px;
+         width: 100%;
+      }
    }
 
    &__input-wrapper {
@@ -61,11 +80,6 @@ $label-padding: 8px;
       top: -17px;
       left: calc(20px - $label-padding);
       background-color: var.$white;
-   }
-
-   &__group-inputs{
-      display: flex;
-      gap: 25px;
    }
 
    &__form > &__input-error-wrapper > &__input-wrapper {
@@ -89,11 +103,39 @@ $label-padding: 8px;
 
    &__group-inputs &__input-wrapper {
       width: 280px;
+
+      @media (max-width: var.$breakpoint_mobile){
+         width: 100%;
+      }
+   }
+
+   &__policy {
+      display: none;
+
+      @media (max-width: var.$breakpoint_mobile){
+         display: flex;
+         gap: 10px;
+         margin: 20px auto;
+         justify-content: center;
+      }      
+   }
+
+   &__policy-label {
+      max-width: 169px;
+   }
+
+   &__policy-link {
+      color: var.$blue;      
    }
 
    &__submit-btn {
       border: none;
-      margin-top: 40px;
+      margin-top: 28px;
+
+      @media (max-width: var.$breakpoint_mobile){
+         display: block;
+         margin: 0 auto;
+      }
    }
 
    &__input-error-text {
