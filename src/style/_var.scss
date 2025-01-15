@@ -14,6 +14,11 @@ $promo-social-separator-padding: calc(-1 * ($promo-social-separator-width + $min
    cursor: pointer;
 }
 
+%medium-font-shared {
+   font-size: 12px;
+   font-weight: medium;
+}
+
 @mixin pseudo-element-template($left-temp: 0, $width-temp: 36px, $height-temp:36px, $transform-temp: translate(0, -50%)) {
    content: '';
    display: block;

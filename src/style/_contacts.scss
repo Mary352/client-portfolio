@@ -55,9 +55,10 @@ $label-padding: 8px;
    }
 
    &__label {
+      @extend %medium-font-shared;
       position: absolute;
       padding: $label-padding;
-      top: -20px;
+      top: -17px;
       left: calc(20px - $label-padding);
       background-color: var.$white;
    }
@@ -68,7 +69,6 @@ $label-padding: 8px;
    }
 
    &__form > &__input-error-wrapper > &__input-wrapper {
-      // margin: 30px 0 0;
       margin-top: 30px;
    }
 
@@ -78,6 +78,7 @@ $label-padding: 8px;
    }
 
    &__input-wrapper &__input {
+      @extend %medium-font-shared;
       width: 100%;
       border: none;
    }
@@ -98,6 +99,5 @@ $label-padding: 8px;
    &__input-error-text {
       color: #ff0000;
       display: none;
-      // margin-top: 3px;
    }
 }
