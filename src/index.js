@@ -11,6 +11,7 @@ const errorTextarea = document.getElementById('contacts__input-error-textarea');
 const nameInput = document.getElementById('username');
 const emailInput = document.getElementById('email');
 const textInput = document.getElementById('text');
+const contactsForm = document.getElementById('contacts__form');
 
 function showError(block, errorText) {
    block.textContent = errorText;
@@ -39,8 +40,11 @@ async function sendForm(body) {
 
    const result = await res.json()
    console.log("🚀 ~ contactsSubmitBtn.addEventListener ~ result:", result)
-}
 
+   if (res.status === 201 || res.status === 200) {
+      contactsForm.reset()
+   }
+}
 
 contactsSubmitBtn.addEventListener('click', (e) => {
    e.preventDefault();
