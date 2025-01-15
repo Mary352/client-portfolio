@@ -1,4 +1,4 @@
-function nthFibo(n) {
+export default function nthFibo(n) {
    const fiboArr = [0, 1]
 
    if (n < 1) return null;
@@ -15,11 +15,4 @@ function nthFibo(n) {
    return fiboArr[n - 1];
 }
 
-console.log('nthFibo(-25): ', nthFibo(-25))
-console.log('nthFibo(0): ', nthFibo(0))
-console.log('nthFibo(1): ', nthFibo(1))
-console.log('nthFibo(2): ', nthFibo(2))
-console.log('nthFibo(4): ', nthFibo(4))
-console.log('nthFibo(5): ', nthFibo(5))
-console.log('nthFibo(15): ', nthFibo(15))
-console.log('nthFibo(26): ', nthFibo(26))
+

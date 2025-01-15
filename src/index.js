@@ -2,6 +2,8 @@ import './index.html';
 import './normalize.min.css';
 import './index.scss';
 
+import nthFibo from './js/fibonacciTask';
+
 const BASE_URL = 'https://jsonplaceholder.typicode.com';
 const emailRegex = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
 const contactsSubmitBtn = document.getElementById('contacts__submit-btn');
@@ -76,3 +78,12 @@ addFocusListener(nameInput, errorName);
 addFocusListener(emailInput, errorEmail);
 addFocusListener(textInput, errorTextarea);
 
+// --------------Fibonacci Task-----------------------
+console.log('nthFibo(-25): ', nthFibo(-25))
+console.log('nthFibo(0): ', nthFibo(0))
+console.log('nthFibo(1): ', nthFibo(1))
+console.log('nthFibo(2): ', nthFibo(2))
+console.log('nthFibo(4): ', nthFibo(4))
+console.log('nthFibo(5): ', nthFibo(5))
+console.log('nthFibo(15): ', nthFibo(15))
+console.log('nthFibo(26): ', nthFibo(26))
