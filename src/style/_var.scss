@@ -7,6 +7,13 @@ $promo-top-padding: 206px;
 $promo-social-separator-width: 70px;
 $promo-social-separator-padding: calc(-1 * ($promo-social-separator-width + $min-margin));
 
+%button-shared {
+   font-size: 14px;
+   font-weight: bold;
+   padding: 12px 25px;
+   cursor: pointer;
+}
+
 @mixin pseudo-element-template($left-temp: 0, $width-temp: 36px, $height-temp:36px, $transform-temp: translate(0, -50%)) {
    content: '';
    display: block;
@@ -25,9 +32,9 @@ $promo-social-separator-padding: calc(-1 * ($promo-social-separator-width + $min
    border-radius: 50%;
 }
 
-@mixin orange-separator($left: 50%, $width: 60px, $height:3px, $transform: translate(-50%, 0)){
+@mixin orange-separator($left: 50%, $width: 60px, $height:3px, $transform: translate(-50%, 0), $bottom: -25px){
    @include pseudo-element-template($left-temp: $left, $width-temp: $width, $height-temp:$height, $transform-temp:$transform);   
-   bottom: -25px;
+   bottom: $bottom;
 }
 
 @mixin title($padding-left: 10px, $margin: 0, $width: 100%) {
@@ -39,4 +46,12 @@ $promo-social-separator-padding: calc(-1 * ($promo-social-separator-width + $min
    margin-bottom: 10px;
    z-index: 1;
    width: $width;
+}
+
+@mixin definition($margin: 0 auto 85px) {
+   margin: $margin;
+   width: max-content;
+   position: relative;
+   font-size: 36px;
+   font-weight: bold;
 }

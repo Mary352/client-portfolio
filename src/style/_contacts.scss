@@ -1,0 +1,95 @@
+@use 'var';
+
+$label-padding: 8px;
+
+.contacts {
+   padding: 120px 35px 90px 52px;   
+   display: flex;
+   gap: 68px;
+
+   &__photo-wrapper {
+      max-width: 400px;
+   }
+
+   &__photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+
+   &__title-wrapper {
+      width: 36px;
+      height: 36px;
+      background-color: var.$orange;
+      border-radius: 50%;
+      position: relative;
+      margin-bottom: 10px;
+   }
+
+   &__title {
+      font-size: 16px;
+      font-weight: bold;
+      position: absolute;
+      transform: translate(12px, 50%);
+   }
+
+   &__social-list {
+      display: flex;
+      margin: 20px 0;
+   }
+
+   &__social-icon:nth-child(2) {
+      margin-right: 20px;
+      margin-left: 25px;
+   }
+
+   &__text {
+      margin-bottom: 30px;
+   }
+
+   &__input-wrapper {
+      border: 1px solid var.$black;
+      position: relative;
+      padding: 14px 0 13px 20px;
+      border: 1px solid var.$black;
+   }
+
+   &__label {
+      position: absolute;
+      padding: $label-padding;
+      top: -20px;
+      left: calc(20px - $label-padding);
+      background-color: var.$white;
+   }
+
+   &__group-inputs{
+      display: flex;
+      gap: 25px;
+   }
+
+   &__form > &__input-wrapper {
+      margin: 30px 0 40px;
+   }
+
+   &__form > &__input-wrapper &__input {
+      height: 190px;
+      resize: none;
+   }
+
+   &__input-wrapper &__input {
+      width: 100%;
+      border: none;
+   }
+
+   &__input-wrapper &__input:focus {
+      outline:none;
+   }
+
+   &__group-inputs &__input-wrapper {
+      width: 280px;
+   }
+
+   &__submit-btn {
+      border: none;
+   }
+}

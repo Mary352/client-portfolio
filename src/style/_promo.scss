@@ -26,10 +26,6 @@
       margin-bottom: calc(-1 * var.$promo-social-separator-padding + var.$min-margin);
    }
 
-   &__main {
-      padding: 0 15px;
-   }
-
    &__signature {   
       writing-mode: vertical-rl;
       transform: rotate(-180deg);

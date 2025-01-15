@@ -5,12 +5,9 @@ $list-padding-top: 45px;
 $big-circle-width: 36px;
 
 .benefit {
-   padding-top: 120px;
-   padding-bottom: 120px;
-
+   padding: 120px 89px 0 65px;
+   
    &__resume-list {
-      margin: 0 auto;
-      width: max-content;
       display: flex;
       gap: 136px;
    }
@@ -34,6 +31,10 @@ $big-circle-width: 36px;
       padding-left: 42px;
       max-width: 417px;
       margin-bottom: 45px;
+   }
+
+   &__list-item:last-child{
+      margin-bottom: 0;
    }
 
    &__item-main-wrapper {

@@ -2,6 +2,7 @@
 @use 'style/promo';
 @use 'style/header';
 @use 'style/benefit';
+@use 'style/contacts';
 
 * {
    box-sizing: border-box;
@@ -17,17 +18,11 @@ ol {
 }
 
 .container {   
-      max-width: calc(var.$container-width + var.$min-margin*2);
+      max-width: var.$container-width;
       margin: 0 auto;
 }
 
 .title_left-side {
-   // font-size: 16px;
-   // font-weight: bold;
-   // position: relative;
-   // padding-left: 10px;
-   // margin-bottom: 35px;
-   // z-index: 1;
    @include var.title
 }
 
@@ -44,40 +39,26 @@ ol {
 }
 
 .definition_centered {
-   margin: 0 auto 85px;
-   width: max-content;
-   position: relative;
-   font-size: 36px;
-   font-weight: bold;
+   @include var.definition;
 }
 
 .definition_centered::before {
    @include var.orange-separator;
+}
 
-   // content: '';
-   // display: block;
-   // position: absolute;
-   // top: 0;
-   // left: 0;
-   // border: 3px solid var.$orange;
+.definition__left-side {
+   @include var.definition($margin: 0 0 35px);
+}
 
-   // content: '';
-   // position: absolute;
-   // display: block;
-   // width: 60px;
-   // height: 3px;
-   // background-color: var.$orange;
-   // bottom: -25px;
-   // left: 50%;
-   // transform: translate(-50%, 0);
+.definition__left-side::before {
+   @include var.orange-separator($left:0, $transform: translate(0), $bottom: -15px);
 }
 
 .button {
-   font-size: 14px;
-   font-weight: bold;
-   padding: 12px 25px;
+   @extend %button-shared;
    
    &_orange {
+      @extend %button-shared;
       background-color: var.$orange;
    }
 }
